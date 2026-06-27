@@ -265,8 +265,9 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (dataGridView.SelectedRows.Count == 0 && dataGridView.SelectedCells.Count == 0) {
-                MessageBox.Show("Выберите ячейку для удаления", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (dataGridView.SelectedRows.Count == 0 && dataGridView.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Выберите строку для удаления");
                 return;
             }
             try
@@ -280,14 +281,13 @@ namespace WinFormsApp1
                 {
                     rowIndex = dataGridView.SelectedCells[0].RowIndex;
                 }
-                DataGridViewRow selectedRow = dataGridView.Rows[rowIndex];
-                int id = Convert.ToInt32(selectedRow.Cells["Column1"].Value);
-                int app_id = Convert.ToInt32(selectedRow.Cells["Column2"].Value);
-
+                DataGridViewRow selectedrow = dataGridView.Rows[rowIndex];
+                int id = Convert.ToInt32(selectedrow.Cells["Column1"].Value);
+                int app_id = Convert.ToInt32(selectedrow.Cells["Column2"].Value);
                 DialogResult result = MessageBox.Show(
-                    $"Уверены, что хотите удалить запись?\n\n" +
+                    $"Уверены,что хотите удалить запись\n\n" +
                     $"ID:{id}\n" +
-                    $"номер аппарата :{app_id}\n",
+                    $"номер аппарата:{app_id}",
                     "Подтверждение удаления",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
@@ -295,26 +295,25 @@ namespace WinFormsApp1
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        string query = "DELETE FROM sells WHERE sell_id = @sell_id";
+                        string query = "DELETE  FROM sells WHERE sell_id=@sell_id";
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@sell_id", id);
-
                         connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
+                        int rowAffected = command.ExecuteNonQuery();
                         connection.Close();
 
-                        if (rowsAffected > 0)
+                        if (rowAffected > 0)
                         {
-                            dataGridView.Rows.Remove(selectedRow);
-                            MessageBox.Show("Запись успешно удалена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dataGridView.Rows.Remove(selectedrow);
+                            MessageBox.Show("Запись успешно удалена", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                    }
+                    }                        
                 }
             }
-            catch (Exception ex) { 
-                MessageBox.Show($"Ошибка при удалении записи:{ex.Message}","Ошибка", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Ошибка при удалении записи{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-    }
+        }
     }
 }
