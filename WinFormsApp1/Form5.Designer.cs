@@ -100,45 +100,45 @@
             label2.AutoSize = true;
             label2.Location = new Point(237, 62);
             label2.Name = "label2";
-            label2.Size = new Size(96, 15);
+            label2.Size = new Size(112, 15);
             label2.TabIndex = 8;
-            label2.Text = "номер автомата";
+            label2.Text = "number of machine";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(424, 62);
             label3.Name = "label3";
-            label3.Size = new Size(98, 15);
+            label3.Size = new Size(90, 15);
             label3.TabIndex = 9;
-            label3.Text = "номер предмета";
+            label3.Text = "number of item";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(610, 62);
             label4.Name = "label4";
-            label4.Size = new Size(71, 15);
+            label4.Size = new Size(51, 15);
             label4.TabIndex = 10;
-            label4.Text = "количество";
+            label4.Text = "quantity";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(57, 185);
             label5.Name = "label5";
-            label5.Size = new Size(82, 15);
+            label5.Size = new Size(67, 15);
             label5.TabIndex = 11;
-            label5.Text = "дата продажи";
+            label5.Text = "date of sale";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(237, 185);
             label6.Name = "label6";
-            label6.Size = new Size(84, 15);
+            label6.Size = new Size(99, 15);
             label6.TabIndex = 12;
-            label6.Text = "метод оплаты";
+            label6.Text = "payment method";
             // 
             // button1
             // 
@@ -146,7 +146,7 @@
             button1.Name = "button1";
             button1.Size = new Size(100, 36);
             button1.TabIndex = 13;
-            button1.Text = "Создать";
+            button1.Text = "create";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -156,7 +156,7 @@
             button2.Name = "button2";
             button2.Size = new Size(100, 36);
             button2.TabIndex = 14;
-            button2.Text = "Назад";
+            button2.Text = "back";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -180,7 +180,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "Form5";
-            Text = "добавление продажи";
+            Text = "new sale";
             ResumeLayout(false);
             PerformLayout();
         }

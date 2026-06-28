@@ -42,9 +42,9 @@
             label1.Font = new Font("Segoe UI", 16F);
             label1.Location = new Point(321, 9);
             label1.Name = "label1";
-            label1.Size = new Size(145, 30);
+            label1.Size = new Size(142, 30);
             label1.TabIndex = 0;
-            label1.Text = "Авторизация";
+            label1.Text = "Authorization";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label2
@@ -52,18 +52,18 @@
             label2.AutoSize = true;
             label2.Location = new Point(321, 116);
             label2.Name = "label2";
-            label2.Size = new Size(40, 15);
+            label2.Size = new Size(34, 15);
             label2.TabIndex = 1;
-            label2.Text = "логин";
+            label2.Text = "login";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(321, 190);
             label3.Name = "label3";
-            label3.Size = new Size(47, 15);
+            label3.Size = new Size(57, 15);
             label3.TabIndex = 2;
-            label3.Text = "пароль";
+            label3.Text = "password";
             // 
             // textBox1
             // 
@@ -85,7 +85,7 @@
             button1.Name = "button1";
             button1.Size = new Size(105, 38);
             button1.TabIndex = 5;
-            button1.Text = "войти";
+            button1.Text = "log in";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -101,7 +101,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form4";
-            Text = "Авторизация";
+            Text = "authorization";
             ResumeLayout(false);
             PerformLayout();
         }

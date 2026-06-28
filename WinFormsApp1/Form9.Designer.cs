@@ -53,7 +53,7 @@
             button2.Name = "button2";
             button2.Size = new Size(100, 36);
             button2.TabIndex = 33;
-            button2.Text = "Назад";
+            button2.Text = "back";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -62,27 +62,27 @@
             label8.AutoSize = true;
             label8.Location = new Point(451, 177);
             label8.Name = "label8";
-            label8.Size = new Size(102, 15);
+            label8.Size = new Size(71, 15);
             label8.TabIndex = 32;
-            label8.Text = "средняя продажа";
+            label8.Text = "average sale";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Location = new Point(250, 177);
             label7.Name = "label7";
-            label7.Size = new Size(37, 15);
+            label7.Size = new Size(44, 15);
             label7.TabIndex = 31;
-            label7.Text = "запас";
+            label7.Text = "reserve";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(52, 177);
             label6.Name = "label6";
-            label6.Size = new Size(64, 15);
+            label6.Size = new Size(48, 15);
             label6.TabIndex = 30;
-            label6.Text = "в наличии";
+            label6.Text = "in stock";
             // 
             // button1
             // 
@@ -90,7 +90,7 @@
             button1.Name = "button1";
             button1.Size = new Size(100, 36);
             button1.TabIndex = 29;
-            button1.Text = "Создать";
+            button1.Text = "create";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -122,25 +122,25 @@
             label5.Name = "label5";
             label5.Size = new Size(33, 15);
             label5.TabIndex = 25;
-            label5.Text = "цена";
+            label5.Text = "price";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(451, 81);
             label4.Name = "label4";
-            label4.Size = new Size(62, 15);
+            label4.Size = new Size(66, 15);
             label4.TabIndex = 24;
-            label4.Text = "Описание";
+            label4.Text = "description";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(250, 81);
             label3.Name = "label3";
-            label3.Size = new Size(97, 15);
+            label3.Size = new Size(78, 15);
             label3.TabIndex = 23;
-            label3.Text = "название товара";
+            label3.Text = "name of item";
             // 
             // label2
             // 
@@ -157,9 +157,9 @@
             label1.Font = new Font("Segoe UI", 14F);
             label1.Location = new Point(295, 28);
             label1.Name = "label1";
-            label1.Size = new Size(160, 25);
+            label1.Size = new Size(123, 25);
             label1.TabIndex = 21;
-            label1.Text = "Создание товара";
+            label1.Text = "Item creating";
             // 
             // textBox4
             // 

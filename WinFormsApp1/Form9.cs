@@ -28,7 +28,7 @@ namespace WinFormsApp1
         {
             if (string.IsNullOrEmpty(textBox1.Text))
             {
-                MessageBox.Show("Поле ID должно быть заполнено","Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ID field must be filled", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             try
@@ -39,12 +39,12 @@ namespace WinFormsApp1
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@id", Convert.ToInt32(textBox1.Text));
-                        command.Parameters.AddWithValue("name", textBox2.Text);
-                        command.Parameters.AddWithValue("description", textBox3.Text);
-                        command.Parameters.AddWithValue("price", Convert.ToInt32(textBox4.Text));
-                        command.Parameters.AddWithValue("in_stock", textBox5.Text);
-                        command.Parameters.AddWithValue("reserve", Convert.ToInt32(textBox6.Text));
-                        command.Parameters.AddWithValue("avg", Convert.ToInt32(textBox7.Text));
+                        command.Parameters.AddWithValue("@name", textBox2.Text);
+                        command.Parameters.AddWithValue("@description", textBox3.Text);
+                        command.Parameters.AddWithValue("@price", Convert.ToInt32(textBox4.Text));
+                        command.Parameters.AddWithValue("@in_stock", textBox5.Text);
+                        command.Parameters.AddWithValue("@reserve", Convert.ToInt32(textBox6.Text));
+                        command.Parameters.AddWithValue("@avg", Convert.ToInt32(textBox7.Text));
 
                         connection.Open();
                         int rowsAffected = command.ExecuteNonQuery();
@@ -52,32 +52,34 @@ namespace WinFormsApp1
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Удалось добавить товары", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Item added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
                         }
                         else
                         {
-                            MessageBox.Show("Не удалось добавить товар", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Failed to add item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    
-
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Проверьте правильность ввода","Ошибка",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please check the input format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (SqlException ex)
             {
-                if(ex.Number == 1062)
+                if (ex.Number == 1062)
                 {
-                    MessageBox.Show("Айди уже существует","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("ID already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show($"Ошибка Sql{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"SQL error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void ClearFields()

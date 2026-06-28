@@ -64,7 +64,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -83,13 +83,12 @@ namespace WinFormsApp1
                     adapter.Fill(dataTable);
                     connection.Close();
 
-                    // Привязываем данные
                     dataGridView1.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -109,13 +108,12 @@ namespace WinFormsApp1
                     adapter.Fill(dataTable);
                     connection.Close();
 
-                    // Привязываем данные
                     dataGridView1.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -135,13 +133,12 @@ namespace WinFormsApp1
                     adapter.Fill(dataTable);
                     connection.Close();
 
-                    // Привязываем данные
                     dataGridView1.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -161,13 +158,12 @@ namespace WinFormsApp1
                     adapter.Fill(dataTable);
                     connection.Close();
 
-                    // Привязываем данные
                     dataGridView1.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -187,13 +183,12 @@ namespace WinFormsApp1
                     adapter.Fill(dataTable);
                     connection.Close();
 
-                    // Привязываем данные
                     dataGridView1.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -216,30 +211,28 @@ namespace WinFormsApp1
         {
             if (dataGridView1.ReadOnly)
             {
-                // Включаем режим редактирования
                 dataGridView1.ReadOnly = false;
                 dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
-                button3.Text = "Сохранить изменения";
-                button1.Enabled = false; // Отключаем кнопку удаления во время редактирования
-                MessageBox.Show("Режим редактирования включен. Измените данные в ячейках и нажмите 'Сохранить изменения'",
-                    "Редактирование", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                button3.Text = "Save Changes";
+                button1.Enabled = false;
+                MessageBox.Show("Edit mode enabled. Change data in cells and click 'Save Changes'",
+                    "Editing", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Сохраняем изменения в базе данных
                 try
                 {
                     SaveChangesToDatabase();
                     dataGridView1.ReadOnly = true;
                     dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-                    button3.Text = "Изменить";
+                    button3.Text = "Edit";
                     button1.Enabled = true;
-                    MessageBox.Show("Изменения успешно сохранены!", "Успех",
+                    MessageBox.Show("Changes saved successfully!", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка при сохранении: {ex.Message}", "Ошибка",
+                    MessageBox.Show($"Error saving: {ex.Message}", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -247,24 +240,20 @@ namespace WinFormsApp1
 
         private void SaveChangesToDatabase()
         {
-            // Проверяем, есть ли измененные строки
             bool hasChanges = false;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                // Проходим по всем строкам DataGridView
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    if (row.IsNewRow) continue; // Пропускаем новую строку для добавления
+                    if (row.IsNewRow) continue;
 
-                    // Проверяем, изменилась ли строка
                     if (row.DataBoundItem is DataRowView rowView && rowView.Row.RowState == DataRowState.Modified)
                     {
                         hasChanges = true;
 
-                        // Получаем значения из строки
                         int id = Convert.ToInt32(row.Cells["Column1"].Value);
                         string manufactur = row.Cells["Column2"].Value?.ToString() ?? "";
                         string model = row.Cells["Column3"].Value?.ToString() ?? "";
@@ -273,7 +262,6 @@ namespace WinFormsApp1
                         string place = row.Cells["Column6"].Value?.ToString() ?? "";
                         string exp_date = row.Cells["Column7"].Value?.ToString() ?? "";
 
-                        // SQL запрос для обновления
                         string query = @"UPDATE apparats 
                                 SET manufactur = @manufactur, 
                                     model = @model, 
@@ -300,12 +288,11 @@ namespace WinFormsApp1
 
                 if (!hasChanges)
                 {
-                    MessageBox.Show("Нет изменений для сохранения", "Информация",
+                    MessageBox.Show("No changes to save", "Information",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
-            // Обновляем данные
             LoadApparatsData();
         }
 
@@ -313,14 +300,13 @@ namespace WinFormsApp1
         {
             if (dataGridView1.SelectedRows.Count == 0 && dataGridView1.SelectedCells.Count == 0)
             {
-                MessageBox.Show("Выберите запись для удаления!", "Внимание",
+                MessageBox.Show("Select a record to delete!", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
-                // Определяем, какая строка выбрана
                 int rowIndex;
 
                 if (dataGridView1.SelectedRows.Count > 0)
@@ -334,25 +320,22 @@ namespace WinFormsApp1
 
                 DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
 
-                // Получаем данные для подтверждения
                 int id = Convert.ToInt32(selectedRow.Cells["Column1"].Value);
-                string manufactur = selectedRow.Cells["Column2"].Value?.ToString() ?? "не указан";
-                string model = selectedRow.Cells["Column3"].Value?.ToString() ?? "не указана";
+                string manufactur = selectedRow.Cells["Column2"].Value?.ToString() ?? "not specified";
+                string model = selectedRow.Cells["Column3"].Value?.ToString() ?? "not specified";
 
-                // Подтверждение удаления
                 DialogResult result = MessageBox.Show(
-                    $"Вы уверены, что хотите удалить запись?\n\n" +
+                    $"Are you sure you want to delete this record?\n\n" +
                     $"ID: {id}\n" +
-                    $"Производитель: {manufactur}\n" +
-                    $"Модель: {model}",
-                    "Подтверждение удаления",
+                    $"Manufacturer: {manufactur}\n" +
+                    $"Model: {model}",
+                    "Confirm Deletion",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button2); // По умолчанию выбрано "Нет"
+                    MessageBoxDefaultButton.Button2);
 
                 if (result == DialogResult.Yes)
                 {
-                    // Удаляем запись
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         string query = "DELETE FROM apparats WHERE id = @id";
@@ -365,9 +348,8 @@ namespace WinFormsApp1
 
                         if (rowsAffected > 0)
                         {
-                            // Удаляем строку из DataGridView
                             dataGridView1.Rows.Remove(selectedRow);
-                            MessageBox.Show("Запись успешно удалена!", "Успех",
+                            MessageBox.Show("Record deleted successfully!", "Success",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -375,7 +357,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при удалении записи: {ex.Message}", "Ошибка",
+                MessageBox.Show($"Error deleting record: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

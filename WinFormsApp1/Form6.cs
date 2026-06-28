@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-
 namespace WinFormsApp1
 {
     public partial class Form6 : Form
@@ -57,7 +56,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных {ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,13 +81,12 @@ namespace WinFormsApp1
                     adapter.Fill(dataTable);
                     connection.Close();
 
-                    // Привязываем данные
                     dataGridView.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -113,7 +111,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -137,7 +135,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -161,7 +159,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -185,7 +183,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -203,7 +201,7 @@ namespace WinFormsApp1
                 dataGridView.ReadOnly = false;
                 dataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
                 button3.Enabled = false;
-                MessageBox.Show("Режим редактирования включен", "Редактирование", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Edit mode enabled", "Editing", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -213,11 +211,11 @@ namespace WinFormsApp1
                     dataGridView.ReadOnly = true;
                     dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
                     button4.Enabled = true;
-                    MessageBox.Show("Изменения успешно сохранены", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Changes saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка при сохранении", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error saving changes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -250,14 +248,13 @@ namespace WinFormsApp1
                         command.Parameters.AddWithValue("@pay_method", pay_method);
 
                         command.ExecuteNonQuery();
-
                     }
                 }
                 connection.Close();
 
                 if (!hasChanges)
                 {
-                    MessageBox.Show("Нет изменений для сохранений", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No changes to save", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             LoadSellsData();
@@ -267,7 +264,7 @@ namespace WinFormsApp1
         {
             if (dataGridView.SelectedRows.Count == 0 && dataGridView.SelectedCells.Count == 0)
             {
-                MessageBox.Show("Выберите строку для удаления");
+                MessageBox.Show("Select a row to delete");
                 return;
             }
             try
@@ -285,17 +282,17 @@ namespace WinFormsApp1
                 int id = Convert.ToInt32(selectedrow.Cells["Column1"].Value);
                 int app_id = Convert.ToInt32(selectedrow.Cells["Column2"].Value);
                 DialogResult result = MessageBox.Show(
-                    $"Уверены,что хотите удалить запись\n\n" +
-                    $"ID:{id}\n" +
-                    $"номер аппарата:{app_id}",
-                    "Подтверждение удаления",
+                    $"Are you sure you want to delete this record?\n\n" +
+                    $"ID: {id}\n" +
+                    $"Machine number: {app_id}",
+                    "Confirm Deletion",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        string query = "DELETE  FROM sells WHERE sell_id=@sell_id";
+                        string query = "DELETE FROM sells WHERE sell_id=@sell_id";
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@sell_id", id);
                         connection.Open();
@@ -305,15 +302,20 @@ namespace WinFormsApp1
                         if (rowAffected > 0)
                         {
                             dataGridView.Rows.Remove(selectedrow);
-                            MessageBox.Show("Запись успешно удалена", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Record deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                    }                        
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при удалении записи{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error deleting record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void записиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

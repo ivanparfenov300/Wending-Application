@@ -20,7 +20,7 @@ namespace WinFormsApp1
         {
             if (string.IsNullOrEmpty(textBox1.Text))
             {
-                MessageBox.Show("заполните обязательное поле id", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in the required field ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -44,37 +44,35 @@ namespace WinFormsApp1
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("удалось успешно подключить автомат", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Vending machine added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
                         }
                         else
                         {
-                            MessageBox.Show("Не удалось добавить автомат", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Failed to add vending machine", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("проверьте правильность ввода", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please check the input format", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (SqlException ex)
             {
-
                 if (ex.Number == 1062)
                 {
-                    MessageBox.Show("Айди уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ID already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show($"ошибка MySql: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"SQL error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при добавлении данных: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error adding data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private void ClearFields()
         {
@@ -87,7 +85,6 @@ namespace WinFormsApp1
             textBox7.Clear();
             textBox1.Focus();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();

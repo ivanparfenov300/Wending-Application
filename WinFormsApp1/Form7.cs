@@ -63,7 +63,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -73,7 +73,7 @@ namespace WinFormsApp1
             {
                 dataGridView.ReadOnly = false;
                 dataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
-                MessageBox.Show("режим редактирования включен", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Edit mode enabled", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -82,13 +82,12 @@ namespace WinFormsApp1
                     SaveChanges();
                     dataGridView.ReadOnly = true;
                     dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-                    MessageBox.Show("Изменения успешно сохранены", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Changes saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка при изменении{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error saving changes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
         private void SaveChanges()
@@ -119,14 +118,12 @@ namespace WinFormsApp1
                         command.Parameters.AddWithValue("@status", status);
 
                         command.ExecuteNonQuery();
-
-
                     }
                 }
                 connection.Close();
                 if (!hasChanges)
                 {
-                    MessageBox.Show("Нет сохранений для изменений", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No changes to save", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -151,7 +148,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -175,7 +172,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -199,7 +196,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -223,7 +220,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
 
@@ -247,7 +244,7 @@ namespace WinFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке данных{ex.Message}");
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
     }

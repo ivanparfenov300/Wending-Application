@@ -26,8 +26,10 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text)){ 
-                MessageBox.Show("Первое поле должно быть заполнено", "Предупрежение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("First field must be filled", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             try
             {
@@ -49,37 +51,40 @@ namespace WinFormsApp1
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Удалось добавить продажу", "Успех",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Sale added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
                         }
                         else
                         {
-                            MessageBox.Show("Не удалось добавить продажу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Failed to add sale", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Проверьте правильность ввода", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please check the input format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (SqlException ex)
             {
                 if (ex.Number == 1062)
                 {
-                    MessageBox.Show("Айди уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ID already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show($"Ошибка MySql {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"SQL error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ClearFields()
         {
             textBox1.Clear();
-            textBox2.Clear(); 
+            textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();

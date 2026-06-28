@@ -32,7 +32,7 @@ namespace WinFormsApp1
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 int count = (int)cmd.ExecuteScalar();
-                label2.Text = $"доход автоматов: {count}";
+                label2.Text = $"vending machine income: {count}";
             }
         }
 
@@ -45,7 +45,7 @@ namespace WinFormsApp1
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 int count = (int)cmd.ExecuteScalar();
-                label3.Text = $"продано товаров {count}";
+                label3.Text = $"items sold: {count}";
             }
         }
 
@@ -58,7 +58,7 @@ namespace WinFormsApp1
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 int count = (int)cmd.ExecuteScalar();
-                label4.Text = $"популярный товар {count}";
+                label4.Text = $"popular item: {count}";
             }
         }
 
@@ -72,11 +72,11 @@ namespace WinFormsApp1
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT COUNT(status) FROM apparats WHERE status = 'работает'";
+                string query = "SELECT COUNT(status) FROM apparats WHERE status = 'working'";
                 SqlCommand comm = new SqlCommand(query, conn);
 
                 int count = (int)comm.ExecuteScalar();
-                label6.Text = $"работающих автоматов {count}";
+                label6.Text = $"working vending machines: {count}";
             }
         }
 
@@ -87,5 +87,9 @@ namespace WinFormsApp1
             form4.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

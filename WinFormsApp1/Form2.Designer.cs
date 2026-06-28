@@ -65,13 +65,6 @@
             form2BindingSource = new BindingSource(components);
             form2BindingSource1 = new BindingSource(components);
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
             button3 = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -85,6 +78,13 @@
             toolStripMenuItem11 = new ToolStripMenuItem();
             button4 = new Button();
             button5 = new Button();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             panel4.SuspendLayout();
             panel7.SuspendLayout();
             menuStrip4.SuspendLayout();
@@ -138,45 +138,45 @@
             // 
             toolStripMenuItem5.DropDownItems.AddRange(new ToolStripItem[] { торговыеАвтоматыToolStripMenuItem, компанииToolStripMenuItem, пользователиToolStripMenuItem, модемыToolStripMenuItem, дополнительноеToolStripMenuItem, торговыеАвтоматыToolStripMenuItem1 });
             toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(134, 20);
-            toolStripMenuItem5.Text = "Администрирование";
+            toolStripMenuItem5.Size = new Size(96, 20);
+            toolStripMenuItem5.Text = "administration";
             // 
             // торговыеАвтоматыToolStripMenuItem
             // 
             торговыеАвтоматыToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
             торговыеАвтоматыToolStripMenuItem.Name = "торговыеАвтоматыToolStripMenuItem";
-            торговыеАвтоматыToolStripMenuItem.Size = new Size(184, 22);
-            торговыеАвтоматыToolStripMenuItem.Text = "Торговые автоматы";
+            торговыеАвтоматыToolStripMenuItem.Size = new Size(180, 22);
+            торговыеАвтоматыToolStripMenuItem.Text = "vending machines";
             // 
             // компанииToolStripMenuItem
             // 
             компанииToolStripMenuItem.Name = "компанииToolStripMenuItem";
-            компанииToolStripMenuItem.Size = new Size(184, 22);
-            компанииToolStripMenuItem.Text = "Компании";
+            компанииToolStripMenuItem.Size = new Size(180, 22);
+            компанииToolStripMenuItem.Text = "companies";
             // 
             // пользователиToolStripMenuItem
             // 
             пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            пользователиToolStripMenuItem.Size = new Size(184, 22);
-            пользователиToolStripMenuItem.Text = "Пользователи";
+            пользователиToolStripMenuItem.Size = new Size(180, 22);
+            пользователиToolStripMenuItem.Text = "users";
             // 
             // модемыToolStripMenuItem
             // 
             модемыToolStripMenuItem.Name = "модемыToolStripMenuItem";
-            модемыToolStripMenuItem.Size = new Size(184, 22);
-            модемыToolStripMenuItem.Text = "модемы";
+            модемыToolStripMenuItem.Size = new Size(180, 22);
+            модемыToolStripMenuItem.Text = "modem";
             // 
             // дополнительноеToolStripMenuItem
             // 
             дополнительноеToolStripMenuItem.Name = "дополнительноеToolStripMenuItem";
-            дополнительноеToolStripMenuItem.Size = new Size(184, 22);
-            дополнительноеToolStripMenuItem.Text = "дополнительное";
+            дополнительноеToolStripMenuItem.Size = new Size(180, 22);
+            дополнительноеToolStripMenuItem.Text = "other";
             // 
             // торговыеАвтоматыToolStripMenuItem1
             // 
             торговыеАвтоматыToolStripMenuItem1.Name = "торговыеАвтоматыToolStripMenuItem1";
-            торговыеАвтоматыToolStripMenuItem1.Size = new Size(184, 22);
-            торговыеАвтоматыToolStripMenuItem1.Text = "Торговые автоматы";
+            торговыеАвтоматыToolStripMenuItem1.Size = new Size(180, 22);
+            торговыеАвтоматыToolStripMenuItem1.Text = "vending machines";
             // 
             // panel6
             // 
@@ -200,26 +200,26 @@
             // 
             toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4 });
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(73, 20);
-            toolStripMenuItem1.Text = "учет ТМЦ";
+            toolStripMenuItem1.Size = new Size(93, 20);
+            toolStripMenuItem1.Text = "item manager";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(104, 22);
-            toolStripMenuItem2.Text = "учет1";
+            toolStripMenuItem2.Size = new Size(112, 22);
+            toolStripMenuItem2.Text = "report1";
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(104, 22);
-            toolStripMenuItem3.Text = "учет2";
+            toolStripMenuItem3.Size = new Size(112, 22);
+            toolStripMenuItem3.Text = "report2";
             // 
             // toolStripMenuItem4
             // 
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(104, 22);
-            toolStripMenuItem4.Text = "учет3";
+            toolStripMenuItem4.Size = new Size(112, 22);
+            toolStripMenuItem4.Text = "report3";
             // 
             // panel5
             // 
@@ -243,26 +243,26 @@
             // 
             детальныеОтчетыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { учет1ToolStripMenuItem, учет2ToolStripMenuItem, учет3ToolStripMenuItem });
             детальныеОтчетыToolStripMenuItem.Name = "детальныеОтчетыToolStripMenuItem";
-            детальныеОтчетыToolStripMenuItem.Size = new Size(119, 20);
-            детальныеОтчетыToolStripMenuItem.Text = "детальные отчеты";
+            детальныеОтчетыToolStripMenuItem.Size = new Size(101, 20);
+            детальныеОтчетыToolStripMenuItem.Text = "detailed reports";
             // 
             // учет1ToolStripMenuItem
             // 
             учет1ToolStripMenuItem.Name = "учет1ToolStripMenuItem";
-            учет1ToolStripMenuItem.Size = new Size(104, 22);
-            учет1ToolStripMenuItem.Text = "учет1";
+            учет1ToolStripMenuItem.Size = new Size(180, 22);
+            учет1ToolStripMenuItem.Text = "report1";
             // 
             // учет2ToolStripMenuItem
             // 
             учет2ToolStripMenuItem.Name = "учет2ToolStripMenuItem";
-            учет2ToolStripMenuItem.Size = new Size(104, 22);
-            учет2ToolStripMenuItem.Text = "учет2";
+            учет2ToolStripMenuItem.Size = new Size(180, 22);
+            учет2ToolStripMenuItem.Text = "report2";
             // 
             // учет3ToolStripMenuItem
             // 
             учет3ToolStripMenuItem.Name = "учет3ToolStripMenuItem";
-            учет3ToolStripMenuItem.Size = new Size(104, 22);
-            учет3ToolStripMenuItem.Text = "учет3";
+            учет3ToolStripMenuItem.Size = new Size(180, 22);
+            учет3ToolStripMenuItem.Text = "report3";
             // 
             // button2
             // 
@@ -271,7 +271,7 @@
             button2.Name = "button2";
             button2.Size = new Size(152, 40);
             button2.TabIndex = 1;
-            button2.Text = "Монитор ТА";
+            button2.Text = "machine manager";
             button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -281,7 +281,7 @@
             button1.Name = "button1";
             button1.Size = new Size(152, 40);
             button1.TabIndex = 0;
-            button1.Text = "главная";
+            button1.Text = "main page";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -324,26 +324,26 @@
             // 
             автоматовААToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { моиАвтоматыToolStripMenuItem, моиСессииToolStripMenuItem, выходToolStripMenuItem });
             автоматовААToolStripMenuItem.Name = "автоматовААToolStripMenuItem";
-            автоматовААToolStripMenuItem.Size = new Size(100, 20);
-            автоматовААToolStripMenuItem.Text = "Автоматов.А.А";
+            автоматовААToolStripMenuItem.Size = new Size(66, 20);
+            автоматовААToolStripMenuItem.Text = "manager";
             // 
             // моиАвтоматыToolStripMenuItem
             // 
             моиАвтоматыToolStripMenuItem.Name = "моиАвтоматыToolStripMenuItem";
-            моиАвтоматыToolStripMenuItem.Size = new Size(153, 22);
-            моиАвтоматыToolStripMenuItem.Text = "мои автоматы";
+            моиАвтоматыToolStripMenuItem.Size = new Size(180, 22);
+            моиАвтоматыToolStripMenuItem.Text = "my machines";
             // 
             // моиСессииToolStripMenuItem
             // 
             моиСессииToolStripMenuItem.Name = "моиСессииToolStripMenuItem";
-            моиСессииToolStripMenuItem.Size = new Size(153, 22);
-            моиСессииToolStripMenuItem.Text = "мои сессии";
+            моиСессииToolStripMenuItem.Size = new Size(180, 22);
+            моиСессииToolStripMenuItem.Text = "my sessions";
             // 
             // выходToolStripMenuItem
             // 
             выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            выходToolStripMenuItem.Size = new Size(153, 22);
-            выходToolStripMenuItem.Text = "выход";
+            выходToolStripMenuItem.Size = new Size(180, 22);
+            выходToolStripMenuItem.Text = "exit";
             выходToolStripMenuItem.Click += выходToolStripMenuItem_Click;
             // 
             // pictureBox1
@@ -373,48 +373,13 @@
             dataGridView1.Size = new Size(744, 359);
             dataGridView1.TabIndex = 4;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Название аппарата";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Модель";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Компания";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Модем";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Адрес";
-            Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "в работе";
-            Column7.Name = "Column7";
-            // 
             // button3
             // 
             button3.Location = new Point(814, -1);
             button3.Name = "button3";
             button3.Size = new Size(137, 44);
             button3.TabIndex = 5;
-            button3.Text = "Добавить";
+            button3.Text = "add";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -423,18 +388,18 @@
             label1.AutoSize = true;
             label1.Location = new Point(263, 418);
             label1.Name = "label1";
-            label1.Size = new Size(55, 15);
+            label1.Size = new Size(35, 15);
             label1.TabIndex = 7;
-            label1.Text = "показать";
+            label1.Text = "show";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(409, 423);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 8;
-            label2.Text = "записей";
+            label2.Text = "notes";
             // 
             // panel8
             // 
@@ -457,41 +422,41 @@
             // 
             записиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem7, toolStripMenuItem8, toolStripMenuItem9, toolStripMenuItem10, toolStripMenuItem11 });
             записиToolStripMenuItem.Name = "записиToolStripMenuItem";
-            записиToolStripMenuItem.Size = new Size(57, 20);
-            записиToolStripMenuItem.Text = "записи";
+            записиToolStripMenuItem.Size = new Size(48, 20);
+            записиToolStripMenuItem.Text = "notes";
             // 
             // toolStripMenuItem7
             // 
             toolStripMenuItem7.Name = "toolStripMenuItem7";
-            toolStripMenuItem7.Size = new Size(180, 22);
+            toolStripMenuItem7.Size = new Size(86, 22);
             toolStripMenuItem7.Text = "10";
             toolStripMenuItem7.Click += toolStripMenuItem7_Click;
             // 
             // toolStripMenuItem8
             // 
             toolStripMenuItem8.Name = "toolStripMenuItem8";
-            toolStripMenuItem8.Size = new Size(180, 22);
+            toolStripMenuItem8.Size = new Size(86, 22);
             toolStripMenuItem8.Text = "20";
             toolStripMenuItem8.Click += toolStripMenuItem8_Click;
             // 
             // toolStripMenuItem9
             // 
             toolStripMenuItem9.Name = "toolStripMenuItem9";
-            toolStripMenuItem9.Size = new Size(180, 22);
+            toolStripMenuItem9.Size = new Size(86, 22);
             toolStripMenuItem9.Text = "30";
             toolStripMenuItem9.Click += toolStripMenuItem9_Click;
             // 
             // toolStripMenuItem10
             // 
             toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(180, 22);
+            toolStripMenuItem10.Size = new Size(86, 22);
             toolStripMenuItem10.Text = "40";
             toolStripMenuItem10.Click += toolStripMenuItem10_Click;
             // 
             // toolStripMenuItem11
             // 
             toolStripMenuItem11.Name = "toolStripMenuItem11";
-            toolStripMenuItem11.Size = new Size(180, 22);
+            toolStripMenuItem11.Size = new Size(86, 22);
             toolStripMenuItem11.Text = "50";
             toolStripMenuItem11.Click += toolStripMenuItem11_Click;
             // 
@@ -501,7 +466,7 @@
             button4.Name = "button4";
             button4.Size = new Size(86, 34);
             button4.TabIndex = 10;
-            button4.Text = "изменить";
+            button4.Text = "change";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -511,9 +476,44 @@
             button5.Name = "button5";
             button5.Size = new Size(86, 34);
             button5.TabIndex = 11;
-            button5.Text = "удалить";
+            button5.Text = "delete";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "name of machine";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "model";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "company";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "modem";
+            Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "address";
+            Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "running machines";
+            Column7.Name = "Column7";
             // 
             // Form2
             // 
@@ -609,6 +609,8 @@
         private ToolStripMenuItem toolStripMenuItem9;
         private ToolStripMenuItem toolStripMenuItem10;
         private ToolStripMenuItem toolStripMenuItem11;
+        private Button button4;
+        private Button button5;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -616,7 +618,5 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
-        private Button button4;
-        private Button button5;
     }
 }

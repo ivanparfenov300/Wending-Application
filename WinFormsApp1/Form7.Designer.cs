@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
             label2 = new Label();
             label1 = new Label();
@@ -56,6 +50,12 @@
             моиАвтоматыToolStripMenuItem = new ToolStripMenuItem();
             выходToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
@@ -76,36 +76,6 @@
             dataGridView1.Size = new Size(646, 386);
             dataGridView1.TabIndex = 11;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "номер автомата";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "платежный метод";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "последняя проверка";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "следующая проверка";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "ресурс автомата";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "состояние";
-            Column6.Name = "Column6";
-            // 
             // panel4
             // 
             panel4.BackColor = SystemColors.ControlDark;
@@ -124,18 +94,18 @@
             label2.AutoSize = true;
             label2.Location = new Point(18, 227);
             label2.Name = "label2";
-            label2.Size = new Size(45, 15);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 7;
-            label2.Text = "записи";
+            label2.Text = "notes";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(18, 149);
             label1.Name = "label1";
-            label1.Size = new Size(55, 15);
+            label1.Size = new Size(35, 15);
             label1.TabIndex = 6;
-            label1.Text = "показать";
+            label1.Text = "show";
             // 
             // panel5
             // 
@@ -158,8 +128,8 @@
             // 
             записиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4, toolStripMenuItem5, toolStripMenuItem6 });
             записиToolStripMenuItem.Name = "записиToolStripMenuItem";
-            записиToolStripMenuItem.Size = new Size(57, 20);
-            записиToolStripMenuItem.Text = "записи";
+            записиToolStripMenuItem.Size = new Size(43, 20);
+            записиToolStripMenuItem.Text = "note";
             // 
             // toolStripMenuItem2
             // 
@@ -203,7 +173,7 @@
             button4.Name = "button4";
             button4.Size = new Size(121, 40);
             button4.TabIndex = 4;
-            button4.Text = "Изменить";
+            button4.Text = "change";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
@@ -214,7 +184,7 @@
             button2.Name = "button2";
             button2.Size = new Size(121, 40);
             button2.TabIndex = 1;
-            button2.Text = "Состояние аппаратов";
+            button2.Text = "status of machine";
             button2.UseVisualStyleBackColor = false;
             // 
             // panel1
@@ -256,20 +226,20 @@
             // 
             аналитиковААToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { моиАвтоматыToolStripMenuItem, выходToolStripMenuItem });
             аналитиковААToolStripMenuItem.Name = "аналитиковААToolStripMenuItem";
-            аналитиковААToolStripMenuItem.Size = new Size(111, 20);
-            аналитиковААToolStripMenuItem.Text = "Механиков.М.М.";
+            аналитиковААToolStripMenuItem.Size = new Size(71, 20);
+            аналитиковААToolStripMenuItem.Text = "mechanic";
             // 
             // моиАвтоматыToolStripMenuItem
             // 
             моиАвтоматыToolStripMenuItem.Name = "моиАвтоматыToolStripMenuItem";
-            моиАвтоматыToolStripMenuItem.Size = new Size(153, 22);
-            моиАвтоматыToolStripMenuItem.Text = "мои автоматы";
+            моиАвтоматыToolStripMenuItem.Size = new Size(180, 22);
+            моиАвтоматыToolStripMenuItem.Text = "my machines";
             // 
             // выходToolStripMenuItem
             // 
             выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            выходToolStripMenuItem.Size = new Size(153, 22);
-            выходToolStripMenuItem.Text = "выход";
+            выходToolStripMenuItem.Size = new Size(180, 22);
+            выходToolStripMenuItem.Text = "exit";
             выходToolStripMenuItem.Click += выходToolStripMenuItem_Click;
             // 
             // pictureBox1
@@ -281,6 +251,36 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "payment method";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "last check";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "next check";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "resource of machine";
+            Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "condititon";
+            Column6.Name = "Column6";
+            // 
             // Form7
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -290,7 +290,7 @@
             Controls.Add(panel4);
             Controls.Add(panel1);
             Name = "Form7";
-            Text = "Ремонт";
+            Text = "repair";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -324,12 +324,6 @@
         private ToolStripMenuItem моиАвтоматыToolStripMenuItem;
         private ToolStripMenuItem выходToolStripMenuItem;
         private PictureBox pictureBox1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
         private MenuStrip menuStrip3;
         private ToolStripMenuItem записиToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem2;
@@ -337,5 +331,11 @@
         private ToolStripMenuItem toolStripMenuItem4;
         private ToolStripMenuItem toolStripMenuItem5;
         private ToolStripMenuItem toolStripMenuItem6;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
     }
 }

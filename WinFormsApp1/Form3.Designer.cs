@@ -81,9 +81,9 @@
             label1.Font = new Font("Segoe UI", 14F);
             label1.Location = new Point(300, 9);
             label1.Name = "label1";
-            label1.Size = new Size(180, 25);
+            label1.Size = new Size(159, 25);
             label1.TabIndex = 4;
-            label1.Text = "Создание автомата";
+            label1.Text = "Machine creating";
             // 
             // label2
             // 
@@ -99,27 +99,27 @@
             label3.AutoSize = true;
             label3.Location = new Point(255, 62);
             label3.Name = "label3";
-            label3.Size = new Size(110, 15);
+            label3.Size = new Size(100, 15);
             label3.TabIndex = 6;
-            label3.Text = "название автомата";
+            label3.Text = "name of machine";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(456, 62);
             label4.Name = "label4";
-            label4.Size = new Size(48, 15);
+            label4.Size = new Size(41, 15);
             label4.TabIndex = 7;
-            label4.Text = "модель";
+            label4.Text = "model";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(654, 62);
             label5.Name = "label5";
-            label5.Size = new Size(62, 15);
+            label5.Size = new Size(57, 15);
             label5.TabIndex = 8;
-            label5.Text = "компания";
+            label5.Text = "company";
             // 
             // textBox5
             // 
@@ -148,7 +148,7 @@
             button1.Name = "button1";
             button1.Size = new Size(100, 36);
             button1.TabIndex = 12;
-            button1.Text = "Создать";
+            button1.Text = "create";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -157,27 +157,27 @@
             label6.AutoSize = true;
             label6.Location = new Point(57, 158);
             label6.Name = "label6";
-            label6.Size = new Size(44, 15);
+            label6.Size = new Size(49, 15);
             label6.TabIndex = 13;
-            label6.Text = "модем";
+            label6.Text = "modem";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Location = new Point(255, 158);
             label7.Name = "label7";
-            label7.Size = new Size(38, 15);
+            label7.Size = new Size(47, 15);
             label7.TabIndex = 14;
-            label7.Text = "адрес";
+            label7.Text = "address";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Location = new Point(456, 158);
             label8.Name = "label8";
-            label8.Size = new Size(54, 15);
+            label8.Size = new Size(49, 15);
             label8.TabIndex = 15;
-            label8.Text = "в работе";
+            label8.Text = "running";
             // 
             // button2
             // 
@@ -185,7 +185,7 @@
             button2.Name = "button2";
             button2.Size = new Size(100, 36);
             button2.TabIndex = 16;
-            button2.Text = "Назад";
+            button2.Text = "back";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
