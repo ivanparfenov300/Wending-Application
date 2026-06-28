@@ -1,0 +1,64 @@
+
+CREATE TABLE equipment (
+    id INT PRIMARY KEY,
+    place VARCHAR(50) NULL,
+    model VARCHAR(50) NULL,
+    pay_type VARCHAR(50) NULL,
+    income INT NULL,
+    inv_id INT NULL,
+    manufactur VARCHAR(50) NULL,
+    man_date DATE NULL,
+    exp_date DATE NULL,
+    last_check_date DATE NULL,
+    interval INT NULL,
+    resource INT NULL,
+    next_rep DATE NULL,
+    time_rep INT NULL,
+    status VARCHAR(50) NULL,
+    country VARCHAR(50) NULL,
+    invent_date DATE NULL,
+    mechanic VARCHAR(50) NULL
+);
+
+CREATE TABLE items (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NULL,
+    description VARCHAR(50) NULL,
+    price INT NULL,
+    in_stock VARCHAR(50) NULL,
+    reserve INT NULL,
+    avg INT NULL
+);
+
+
+
+CREATE TABLE sales (
+    sell_id INT PRIMARY KEY,
+    app_id INT NULL,
+    item_id INT NULL,
+    quantity INT NULL,
+    sell_time DATE NULL,
+    pay_method VARCHAR(50) NULL,
+    CONSTRAINT FK_sales_items FOREIGN KEY (item_id) REFERENCES items(id)
+);
+
+
+CREATE TABLE services (
+    service_id INT PRIMARY KEY,
+    app_id INT NULL,
+    service_date DATE NULL,
+    description VARCHAR(50) NULL,
+    problems VARCHAR(50) NULL,
+    mech_id INT NULL
+);
+
+
+
+CREATE TABLE users (
+    id INT PRIMARY KEY,
+    surname VARCHAR(50) NULL,
+    name VARCHAR(50) NULL,
+    otch VARCHAR(50) NULL,
+    email VARCHAR(50) NULL,
+    role VARCHAR(50) NULL
+);
